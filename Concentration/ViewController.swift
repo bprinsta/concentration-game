@@ -21,12 +21,12 @@ class ViewController: UIViewController {
 	private var themeCardTitles: [String]?
 	private var emoji = [Int: String]()
 	
-	private let smileyTheme = Theme.init(backgroundColor: UIColor(rgb: 0xEDC7B7), cardColor: UIColor(rgb: 0x123C69), cardTitles:["😎", "🤪", "😁", "😍", "😭", "🧐", "🤥", "😤"])
-	private let animalTheme = Theme.init(backgroundColor: UIColor(rgb: 0xEDC7B7), cardColor: UIColor(rgb: 0x123C69), cardTitles:["🐶", "🐱", "🐭", "🐷", "🐮", "🐨", "🙉", "🦊"])
-	private let foodTheme = Theme.init(backgroundColor: UIColor(rgb: 0xEDC7B7), cardColor: UIColor(rgb: 0x123C69), cardTitles:["🍎", "🍐", "🌶", "🥦", "🍆", "🥑", "🍌", "🍇"])
-	private let spaceTheme = Theme.init(backgroundColor: UIColor(rgb: 0xEDC7B7), cardColor: UIColor(rgb: 0x123C69), cardTitles:["🌝", "🌗", "🌎", "🌚", "🌙", "💫", "🌍", "🌓"])
-	private let itemsTheme = Theme.init(backgroundColor: UIColor(rgb: 0xEDC7B7), cardColor: UIColor(rgb: 0x123C69), cardTitles:["💍", "💄", "💋", "👄", "👅", "👣", "🧠", "👁"])
-	private let randomTheme = Theme.init(backgroundColor: UIColor(rgb: 0xEDC7B7), cardColor: UIColor(rgb: 0x123C69), cardTitles:["🛁", "🎳", "🎭", "⚱️", "💣", "💡", "💊", "📌"])
+	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["😎", "🤪", "😁", "😍", "😭", "🧐", "🤥", "😤"])
+	private let animalTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🐶", "🐱", "🐭", "🐷", "🐮", "🐨", "🙉", "🦊"])
+	private let foodTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🍎", "🍐", "🌶", "🥦", "🍆", "🥑", "🍌", "🍇"])
+	private let spaceTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🌝", "🌗", "🌎", "🌚", "🌙", "💫", "🌍", "🌓"])
+	private let itemsTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["💍", "💄", "💋", "👄", "👅", "👣", "🧠", "👁"])
+	private let randomTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🛁", "🎳", "🎭", "⚱️", "💣", "💡", "💊", "📌"])
 
 	@IBOutlet private weak var flipCountLabel: UILabel!
 	@IBOutlet private weak var scoreLabel: UILabel!
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 		scoreLabel.textColor = themeCardColor
 		flipCountLabel.textColor = themeCardColor
 		newGameButton.tintColor = themeCardColor
-		newGameButton.backgroundColor = UIColor(rgb: 0xEEE2DC)
+		newGameButton.backgroundColor = Constants.beige
 		gameTitleLabel.textColor = themeCardColor
 	}
 	
@@ -84,11 +84,11 @@ class ViewController: UIViewController {
 			let card = game.cards[index]
 			if card.isFaceUp {
 				button.setTitle(emoji(for: card), for: UIControlState.normal)
-				button.backgroundColor = UIColor(rgb: 0xEEE2DC)
+				button.backgroundColor = Constants.beige
 				button.isEnabled = false
 			} else {
 				button.setTitle("", for: UIControlState.normal)
-				button.backgroundColor = card.isMatched ? UIColor.clear : UIColor(rgb: 0x123C69)
+				button.backgroundColor = card.isMatched ? UIColor.clear : Constants.navyBlue
 				button.isEnabled = true
 			}
 		}

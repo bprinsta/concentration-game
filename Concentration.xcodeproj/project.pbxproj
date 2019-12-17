@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		523C8EBD23A88C5600C2BF54 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C8EBC23A88C5600C2BF54 /* Theme.swift */; };
+		523C8EBF23A97B0600C2BF54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C8EBE23A97B0600C2BF54 /* Constants.swift */; };
 		523EC150237D129B00D75EE2 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EC14F237D129B00D75EE2 /* Concentration.swift */; };
 		5271799F235811650090175A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5271799E235811650090175A /* AppDelegate.swift */; };
 		527179A1235811650090175A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527179A0235811650090175A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		523C8EBC23A88C5600C2BF54 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		523C8EBE23A97B0600C2BF54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		523EC14F237D129B00D75EE2 /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		5271799B235811650090175A /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5271799E235811650090175A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				523EC14F237D129B00D75EE2 /* Concentration.swift */,
 				5271799E235811650090175A /* AppDelegate.swift */,
 				527179A0235811650090175A /* ViewController.swift */,
+				523C8EBE23A97B0600C2BF54 /* Constants.swift */,
 				523C8EBC23A88C5600C2BF54 /* Theme.swift */,
 				527179B2235B5C290090175A /* Card.swift */,
 				527179A2235811650090175A /* Main.storyboard */,
@@ -149,6 +152,7 @@
 				523C8EBD23A88C5600C2BF54 /* Theme.swift in Sources */,
 				5271799F235811650090175A /* AppDelegate.swift in Sources */,
 				527179B3235B5C290090175A /* Card.swift in Sources */,
+				523C8EBF23A97B0600C2BF54 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
