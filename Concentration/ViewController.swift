@@ -21,12 +21,12 @@ class ViewController: UIViewController {
 	private var themeCardTitles: [String]?
 	private var emoji = [Int: String]()
 	
-	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["😎", "🤪", "😁", "😍", "😭", "🧐", "🤥", "😤"])
-	private let animalTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🐶", "🐱", "🐭", "🐷", "🐮", "🐨", "🙉", "🦊"])
-	private let foodTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🍎", "🍐", "🌶", "🥦", "🍆", "🥑", "🍌", "🍇"])
-	private let spaceTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🌝", "🌗", "🌎", "🌚", "🌙", "💫", "🌍", "🌓"])
-	private let itemsTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["💍", "💄", "💋", "👄", "👅", "👣", "🧠", "👁"])
-	private let randomTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles:["🛁", "🎳", "🎭", "⚱️", "💣", "💡", "💊", "📌"])
+	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.faces)
+	private let animalTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.animals)
+	private let foodTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.fruit)
+	private let spaceTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.space)
+	private let itemsTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.items)
+	private let randomTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.random)
 
 	@IBOutlet private weak var flipCountLabel: UILabel!
 	@IBOutlet private weak var scoreLabel: UILabel!
