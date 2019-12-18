@@ -46,17 +46,25 @@ class ViewController: UIViewController {
 		let themes: [Theme] = [smileyTheme, animalTheme, foodTheme, spaceTheme, natureTheme, randomTheme, sportsTheme]
 		let selectedTheme = themes.count.arc4random
 		
+		// Set theme properties
 		themeBackgroundColor = themes[selectedTheme].backgroundColor
 		themeCardColor = themes[selectedTheme].cardColor
 		themeCardTitles = themes[selectedTheme].cardTitles
 		themeCardFaceColor = themes[selectedTheme].cardFaceColor
 		
+		// Set UI elements theme colors and other properties
 		view.backgroundColor = themeBackgroundColor
 		scoreLabel.textColor = themeCardColor
 		flipCountLabel.textColor = themeCardColor
 		newGameButton.tintColor = themeCardColor
 		newGameButton.backgroundColor = themeCardFaceColor
+		newGameButton.layer.cornerRadius = 8.0
 		gameTitleLabel.textColor = themeCardColor
+		
+		// Round card's corners
+		for index in cardButtons.indices {
+			cardButtons[index].layer.cornerRadius = 8.0
+		}
 	}
 	
 	// MARK: Handle Card Touch Behavior
