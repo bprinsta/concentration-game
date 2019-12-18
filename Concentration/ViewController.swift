@@ -77,19 +77,37 @@ class ViewController: UIViewController {
 		} else {
 			print("Chosen card was not in card buttons set")
 		}
+		
+		if game.gameOver {
+			endGame()
+		}
 	}
 	
 	@IBAction private func newGame(_ sender: UIButton) {
+		newGame()
+	}
+	
+	private func newGame() {
 		game.newGame()
 		emoji.removeAll()
 		setTheme()
 		updateViewFromModel()
 	}
 	
-	@IBAction func gameRules(_ sender: UIButton) {
+	@IBAction private func gameRules(_ sender: UIButton) {
 		let alertController = UIAlertController(title: "How To Play", message:
 			"Match two of the same cards to score 2 points. If you flip over a card more than once without matching it, you lose 1 point. Put your concentration skills to the test and try to break your high score!", preferredStyle: .alert)
 		alertController.addAction(UIAlertAction(title: "Play", style: .default))
+		
+		self.present(alertController, animated: true, completion: nil)
+	}
+	
+	private func endGame() {
+		let alertController = UIAlertController(title: "Congratulations", message:
+			"You finished the game with a score of \(game.score)!", preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Play New Game", style: .default, handler: { _ in
+			self.newGame()
+		}))
 		
 		self.present(alertController, animated: true, completion: nil)
 	}

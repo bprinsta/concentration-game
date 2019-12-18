@@ -13,6 +13,7 @@ struct Concentration {
 	private(set) var cards = [Card]()
 	private(set) var score: Int
 	var flipCount: Int
+	var gameOver: Bool
 	
 	private var indexOfOneAndOnlyFaceUpCard: Int? {
 		get {
@@ -48,11 +49,14 @@ struct Concentration {
 				indexOfOneAndOnlyFaceUpCard = index
 			}
 		}
+		
+		gameOver = isGameOver()
 	}
 	
 	mutating func newGame() {
 		score = 0
 		flipCount = 0
+		gameOver = false
 		
 		for index in cards.indices {
 			cards[index].isMatched = false
@@ -67,12 +71,24 @@ struct Concentration {
 		
 		score = 0
 		flipCount = 0
+		gameOver = false
 		
 		for _ in 1...numPairsOfCards {
 			let card = Card();
 			cards += [card, card]
 		}
 		cards.shuffle()
+	}
+	
+	private func isGameOver() -> Bool {
+		var allMatched = true
+		for card in cards {
+			if !card.isMatched {
+				allMatched = false
+				break
+			}
+		}
+		return allMatched
 	}
 }
 
