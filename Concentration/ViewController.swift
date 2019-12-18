@@ -33,8 +33,8 @@ class ViewController: UIViewController {
 	@IBOutlet private weak var flipCountLabel: UILabel!
 	@IBOutlet private weak var scoreLabel: UILabel!
 	@IBOutlet private(set) var cardButtons: [UIButton]!
-	@IBOutlet private(set) var newGameButton: UIButton!
-	@IBOutlet private(set) var gameTitleLabel: UILabel!
+	@IBOutlet private weak var newGameButton: UIButton!
+	@IBOutlet private weak var gameTitleLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -76,6 +76,14 @@ class ViewController: UIViewController {
 		emoji.removeAll()
 		setTheme()
 		updateViewFromModel()
+	}
+	
+	@IBAction func gameRules(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "How To Play", message:
+			"Match two of the same cards to score 2 points. If you flip over a card more than once without matching it, you lose 1 point. Put your concentration skills to the test and try to break your high score!", preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Play", style: .default))
+		
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	private func updateViewFromModel() {
