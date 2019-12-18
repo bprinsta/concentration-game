@@ -18,15 +18,17 @@ class ViewController: UIViewController {
 	
 	private var themeBackgroundColor: UIColor?
 	private var themeCardColor: UIColor?
+	private var themeCardFaceColor: UIColor?
 	private var themeCardTitles: [String]?
 	private var emoji = [Int: String]()
 	
-	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.faces)
-	private let animalTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.animals)
-	private let foodTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.fruit)
-	private let spaceTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.space)
-	private let itemsTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.items)
-	private let randomTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardTitles: Constants.random)
+	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardFaceColor: Constants.beige, cardTitles: Constants.faces)
+	private let animalTheme = Theme.init(backgroundColor: Constants.cream, cardColor: Constants.brown, cardFaceColor: Constants.darkCream, cardTitles: Constants.animals)
+	private let foodTheme = Theme.init(backgroundColor: Constants.green, cardColor: Constants.darkGreen, cardFaceColor: Constants.forestCream, cardTitles: Constants.fruit)
+	private let spaceTheme = Theme.init(backgroundColor: Constants.lightBeachBlue, cardColor: Constants.beachCream, cardFaceColor: Constants.beachBlue, cardTitles: Constants.space)
+	private let natureTheme = Theme.init(backgroundColor: Constants.green, cardColor: Constants.darkGreen, cardFaceColor: Constants.forestCream,cardTitles: Constants.nature)
+	private let randomTheme = Theme.init(backgroundColor: Constants.cream, cardColor: Constants.brown, cardFaceColor: Constants.darkCream,cardTitles: Constants.random)
+	private let sportsTheme = Theme.init(backgroundColor: Constants.lightBeachBlue, cardColor: Constants.beachCream, cardFaceColor: Constants.beachBlue,cardTitles: Constants.sports)
 
 	@IBOutlet private weak var flipCountLabel: UILabel!
 	@IBOutlet private weak var scoreLabel: UILabel!
@@ -41,18 +43,19 @@ class ViewController: UIViewController {
 	}
 	
 	private func setTheme() {
-		let themes: [Theme] = [smileyTheme, animalTheme, foodTheme, spaceTheme, itemsTheme, randomTheme]
+		let themes: [Theme] = [smileyTheme, animalTheme, foodTheme, spaceTheme, natureTheme, randomTheme, sportsTheme]
 		let selectedTheme = themes.count.arc4random
 		
 		themeBackgroundColor = themes[selectedTheme].backgroundColor
 		themeCardColor = themes[selectedTheme].cardColor
 		themeCardTitles = themes[selectedTheme].cardTitles
+		themeCardFaceColor = themes[selectedTheme].cardFaceColor
 		
 		view.backgroundColor = themeBackgroundColor
 		scoreLabel.textColor = themeCardColor
 		flipCountLabel.textColor = themeCardColor
 		newGameButton.tintColor = themeCardColor
-		newGameButton.backgroundColor = Constants.beige
+		newGameButton.backgroundColor = themeCardFaceColor
 		gameTitleLabel.textColor = themeCardColor
 	}
 	
@@ -84,11 +87,11 @@ class ViewController: UIViewController {
 			let card = game.cards[index]
 			if card.isFaceUp {
 				button.setTitle(emoji(for: card), for: UIControlState.normal)
-				button.backgroundColor = Constants.beige
+				button.backgroundColor = themeCardFaceColor
 				button.isEnabled = false
 			} else {
 				button.setTitle("", for: UIControlState.normal)
-				button.backgroundColor = card.isMatched ? UIColor.clear : Constants.navyBlue
+				button.backgroundColor = card.isMatched ? UIColor.clear : themeCardColor
 				button.isEnabled = true
 			}
 		}

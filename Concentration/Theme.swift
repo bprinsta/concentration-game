@@ -11,5 +11,6 @@ import UIKit
 struct Theme {
 	var backgroundColor: UIColor
 	var cardColor: UIColor
+	var cardFaceColor: UIColor
 	var cardTitles: [String]
 }
