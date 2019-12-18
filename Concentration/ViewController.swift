@@ -92,7 +92,7 @@ class ViewController: UIViewController {
 			} else {
 				button.setTitle("", for: UIControlState.normal)
 				button.backgroundColor = card.isMatched ? UIColor.clear : themeCardColor
-				button.isEnabled = true
+				button.isEnabled = card.isMatched ? false : true
 			}
 		}
 	}

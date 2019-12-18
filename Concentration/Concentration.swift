@@ -54,6 +54,7 @@ class Concentration {
 				}
 				cards[index].isFaceUp = true
 				cards[index].flipCount += 1
+				cards[matchIndex].flipCount += 1
 			} else {
 				indexOfOneAndOnlyFaceUpCard = index
 			}
