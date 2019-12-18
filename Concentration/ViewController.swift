@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 	private var themeCardColor: UIColor?
 	private var themeCardFaceColor: UIColor?
 	private var themeCardTitles: [String]?
-	private var emoji = [Int: String]()
+	private var emoji = [Card: String]()
 	
 	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardFaceColor: Constants.beige, cardTitles: Constants.faces)
 	private let animalTheme = Theme.init(backgroundColor: Constants.cream, cardColor: Constants.brown, cardFaceColor: Constants.darkCream, cardTitles: Constants.animals)
@@ -106,10 +106,10 @@ class ViewController: UIViewController {
 	}
 		
 	private func emoji(for card: Card) -> String {
-		if emoji[card.identifier] == nil && themeCardTitles != nil {
-			emoji[card.identifier] = themeCardTitles!.remove(at: themeCardTitles!.count.arc4random)
+		if emoji[card] == nil && themeCardTitles != nil {
+			emoji[card] = themeCardTitles!.remove(at: themeCardTitles!.count.arc4random)
 		}
-		return emoji[card.identifier] ?? "?"
+		return emoji[card] ?? "?"
 	}
 }
 
