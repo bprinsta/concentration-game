@@ -10,9 +10,9 @@ import UIKit
 
 struct Constants {
 	// Main Theme Colors
-	static let lightPink = UIColor(rgb: 0xEDC7B7)
-	static let navyBlue = UIColor(rgb: 0x123C69)
-	static let beige = UIColor(rgb: 0xEEE2DC)
+	static let lightPink = UIColor(rgb: 0xFDFFFC)
+	static let navyBlue = UIColor(rgb: 0x022a4b)
+	static let beige = UIColor(rgb: 0x98e7df)
 	
 	// Brown Theme Colors
 	static let brown = UIColor(rgb: 0xbe9b7b)
