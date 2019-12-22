@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 	private var themeCardTitles: [String]?
 	private var emoji = [Card: String]()
 	
-	private let smileyTheme = Theme.init(backgroundColor: Constants.lightPink, cardColor: Constants.navyBlue, cardFaceColor: Constants.beige, cardTitles: Constants.faces)
+	private let smileyTheme = Theme.init(backgroundColor: Constants.white, cardColor: Constants.navyBlue, cardFaceColor: Constants.teal, cardTitles: Constants.faces)
 	private let animalTheme = Theme.init(backgroundColor: Constants.cream, cardColor: Constants.brown, cardFaceColor: Constants.darkCream, cardTitles: Constants.animals)
 	private let foodTheme = Theme.init(backgroundColor: Constants.green, cardColor: Constants.darkGreen, cardFaceColor: Constants.forestCream, cardTitles: Constants.fruit)
 	private let spaceTheme = Theme.init(backgroundColor: Constants.lightBeachBlue, cardColor: Constants.beachCream, cardFaceColor: Constants.beachBlue, cardTitles: Constants.space)
