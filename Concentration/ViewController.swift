@@ -40,6 +40,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		setTheme()
 		updateViewFromModel()
+		endGame()
 	}
 	
 	private func setTheme() {
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
 		themeCardTitles = themes[selectedTheme].cardTitles
 		themeCardFaceColor = themes[selectedTheme].cardFaceColor
 		
-		// Set UI elements theme colors and other properties
+		// Set UI elements theme colors
 		view.backgroundColor = themeBackgroundColor
 		scoreLabel.textColor = themeCardColor
 		flipCountLabel.textColor = themeCardColor
@@ -80,7 +81,7 @@ class ViewController: UIViewController {
 		
 		if game.gameOver {
 			createParticles(view: self.view)
-			newGame()
+			endGame()
 		}
 	}
 	
@@ -111,7 +112,18 @@ class ViewController: UIViewController {
 			self.newGame()
 		}))
 		
-		self.present(alertController, animated: true, completion: nil)
+//		let endGameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 400))
+//		endGameLabel.font = UIFont(name: "AvenirNext", size: 50)
+//		endGameLabel.textColor = themeCardColor
+//		endGameLabel.center = view.center
+//		endGameLabel.textAlignment = .center
+//		endGameLabel.numberOfLines = 3
+//		endGameLabel.text = "Congratulations! You finished the game with a score of \(game.score)!"
+//		endGameLabel.lineBreakMode = .byWordWrapping
+//
+//		view.addSubview(endGameLabel)
+		
+		 self.present(alertController, animated: true, completion: nil)
 	}
 	
 	private func updateViewFromModel() {

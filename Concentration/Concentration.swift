@@ -38,9 +38,9 @@ struct Concentration {
 				if cards[matchIndex] == cards[index] {
 					cards[matchIndex].isMatched = true
 					cards[index].isMatched = true
-					score += 2
+					score += 20
 				} else if cards[index].flipCount > 0 || cards[matchIndex].flipCount > 0 {
-					score -= 1
+					score -= 10
 				}
 				cards[index].isFaceUp = true
 				cards[index].flipCount += 1
@@ -91,7 +91,7 @@ struct Concentration {
 		return allMatched
 	}
 }
-
+// MARK: Extensions
 extension Collection {
 	var oneAndOnly: Element? {
 		return count == 1 ? first : nil
