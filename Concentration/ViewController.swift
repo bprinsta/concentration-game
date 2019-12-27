@@ -79,8 +79,8 @@ class ViewController: UIViewController {
 		}
 		
 		if game.gameOver {
-			// endGame()
 			createParticles(view: self.view)
+			newGame()
 		}
 	}
 	

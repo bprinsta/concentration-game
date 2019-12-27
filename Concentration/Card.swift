@@ -16,6 +16,10 @@ struct Card: Hashable {
 	
 	private static var identifierFactory = 0
 	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(identifier)
+	}
+	
 	private static func getUniqueIdentifier() -> Int {
 		identifierFactory += 1
 		return Card.identifierFactory
