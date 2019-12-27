@@ -9,24 +9,20 @@
 import Foundation
 
 struct Card: Hashable {
-	
-	var hashValue: Int {return identifier}
-	
-	static func ==(lhs: Card, rhs: Card) -> Bool {
-		return lhs.identifier == rhs.identifier
-	}
-	
 	var isFaceUp = false
 	var isMatched = false
-	private var identifier: Int
 	var flipCount = 0
+	private var identifier: Int
 	
-	// static var and funcs are for the type not individual card
 	private static var identifierFactory = 0
 	
 	private static func getUniqueIdentifier() -> Int {
 		identifierFactory += 1
 		return Card.identifierFactory
+	}
+	
+	static func ==(lhs: Card, rhs: Card) -> Bool {
+		return lhs.identifier == rhs.identifier
 	}
 	
 	init() {

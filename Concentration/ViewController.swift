@@ -22,20 +22,20 @@ class ViewController: UIViewController {
 	private var themeCardTitles: [String]?
 	private var emoji = [Card: String]()
 	
-	private let smileyTheme = Theme.init(backgroundColor: Constants.white, cardColor: Constants.navyBlue, cardFaceColor: Constants.teal, cardTitles: Constants.faces)
-	private let animalTheme = Theme.init(backgroundColor: Constants.cream, cardColor: Constants.brown, cardFaceColor: Constants.darkCream, cardTitles: Constants.animals)
-	private let foodTheme = Theme.init(backgroundColor: Constants.green, cardColor: Constants.darkGreen, cardFaceColor: Constants.forestCream, cardTitles: Constants.fruit)
-	private let spaceTheme = Theme.init(backgroundColor: Constants.lightBeachBlue, cardColor: Constants.beachCream, cardFaceColor: Constants.beachBlue, cardTitles: Constants.space)
-	private let natureTheme = Theme.init(backgroundColor: Constants.green, cardColor: Constants.darkGreen, cardFaceColor: Constants.forestCream,cardTitles: Constants.nature)
-	private let randomTheme = Theme.init(backgroundColor: Constants.cream, cardColor: Constants.brown, cardFaceColor: Constants.darkCream,cardTitles: Constants.random)
-	private let sportsTheme = Theme.init(backgroundColor: Constants.lightBeachBlue, cardColor: Constants.beachCream, cardFaceColor: Constants.beachBlue,cardTitles: Constants.sports)
+	private let smileyTheme = Theme.init(backgroundColor: ThemeColors.white, cardColor: ThemeColors.navyBlue, cardFaceColor: ThemeColors.teal, cardTitles: ThemeEmojis.faces)
+	private let animalTheme = Theme.init(backgroundColor: ThemeColors.cream, cardColor: ThemeColors.brown, cardFaceColor: ThemeColors.darkCream, cardTitles: ThemeEmojis.animals)
+	private let foodTheme = Theme.init(backgroundColor: ThemeColors.green, cardColor: ThemeColors.darkGreen, cardFaceColor: ThemeColors.forestCream, cardTitles: ThemeEmojis.fruit)
+	private let spaceTheme = Theme.init(backgroundColor: ThemeColors.lightBeachBlue, cardColor: ThemeColors.beachCream, cardFaceColor: ThemeColors.beachBlue, cardTitles: ThemeEmojis.space)
+	private let natureTheme = Theme.init(backgroundColor: ThemeColors.green, cardColor: ThemeColors.darkGreen, cardFaceColor: ThemeColors.forestCream,cardTitles: ThemeEmojis.nature)
+	private let randomTheme = Theme.init(backgroundColor: ThemeColors.cream, cardColor: ThemeColors.brown, cardFaceColor: ThemeColors.darkCream,cardTitles: ThemeEmojis.random)
+	private let sportsTheme = Theme.init(backgroundColor: ThemeColors.lightBeachBlue, cardColor: ThemeColors.beachCream, cardFaceColor: ThemeColors.beachBlue,cardTitles: ThemeEmojis.sports)
 
 	@IBOutlet private weak var flipCountLabel: UILabel!
 	@IBOutlet private weak var scoreLabel: UILabel!
 	@IBOutlet private(set) var cardButtons: [UIButton]!
 	@IBOutlet private weak var newGameButton: UIButton!
 	@IBOutlet private weak var gameTitleLabel: UILabel!
-	
+		
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setTheme()
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
 	
 	// MARK: Handle Card Touch Behavior
 	@IBAction private func touchCard(_ sender: UIButton) {
-		if let cardNumber = cardButtons.index(of: sender)
+		if let cardNumber = cardButtons.firstIndex(of: sender)
 		{
 			game.chooseCard(at: cardNumber)
 			updateViewFromModel()
@@ -79,7 +79,8 @@ class ViewController: UIViewController {
 		}
 		
 		if game.gameOver {
-			endGame()
+			// endGame()
+			createParticles(view: self.view)
 		}
 	}
 	
@@ -88,6 +89,7 @@ class ViewController: UIViewController {
 	}
 	
 	private func newGame() {
+		view.removeLayer(layerName: "confetti")
 		game.newGame()
 		emoji.removeAll()
 		setTheme()
@@ -120,11 +122,11 @@ class ViewController: UIViewController {
 			let button = cardButtons[index]
 			let card = game.cards[index]
 			if card.isFaceUp {
-				button.setTitle(emoji(for: card), for: UIControlState.normal)
+				button.setTitle(emoji(for: card), for: UIControl.State.normal)
 				button.backgroundColor = themeCardFaceColor
 				button.isEnabled = false
 			} else {
-				button.setTitle("", for: UIControlState.normal)
+				button.setTitle("", for: UIControl.State.normal)
 				button.backgroundColor = card.isMatched ? UIColor.clear : themeCardColor
 				button.isEnabled = card.isMatched ? false : true
 			}
@@ -152,22 +154,12 @@ extension Int {
 	}
 }
 
-extension UIColor {
-	convenience init(red: Int, green: Int, blue: Int) {
-		assert(red >= 0 && red <= 255, "Invalid red component")
-		assert(green >= 0 && green <= 255, "Invalid green component")
-		assert(blue >= 0 && blue <= 255, "Invalid blue component")
-		
-		self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-	}
-	
-	convenience init(rgb: Int) {
-		self.init(
-			red: (rgb >> 16) & 0xFF,
-			green: (rgb >> 8) & 0xFF,
-			blue: rgb & 0xFF
-		)
-	}
+extension UIView {
+    func removeLayer(layerName: String) {
+            for item in self.layer.sublayers ?? [] where item.name == layerName {
+                    item.removeFromSuperlayer()
+            }
+        }
 }
 
 
