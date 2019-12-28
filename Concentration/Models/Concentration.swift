@@ -12,8 +12,8 @@ struct Concentration {
 	
 	private(set) var cards = [Card]()
 	private(set) var score: Int
-	var flipCount: Int
-	var gameOver: Bool
+	private(set) var flipCount: Int
+	private(set) var gameOver: Bool
 	
 	private var indexOfOneAndOnlyFaceUpCard: Int? {
 		get {

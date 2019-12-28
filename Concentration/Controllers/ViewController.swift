@@ -112,17 +112,6 @@ class ViewController: UIViewController {
 			self.newGame()
 		}))
 		
-//		let endGameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 400))
-//		endGameLabel.font = UIFont(name: "AvenirNext", size: 50)
-//		endGameLabel.textColor = themeCardColor
-//		endGameLabel.center = view.center
-//		endGameLabel.textAlignment = .center
-//		endGameLabel.numberOfLines = 3
-//		endGameLabel.text = "Congratulations! You finished the game with a score of \(game.score)!"
-//		endGameLabel.lineBreakMode = .byWordWrapping
-//
-//		view.addSubview(endGameLabel)
-		
 		 self.present(alertController, animated: true, completion: nil)
 	}
 	

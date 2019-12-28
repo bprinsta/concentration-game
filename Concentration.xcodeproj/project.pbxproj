@@ -66,39 +66,39 @@
 			children = (
 				5271799E235811650090175A /* AppDelegate.swift */,
 				523C8EBE23A97B0600C2BF54 /* Constants.swift */,
-				52EBB56823B6E976008EAC1A /* Model */,
-				52EBB56923B6E991008EAC1A /* View */,
-				52EBB56A23B6E99A008EAC1A /* Controller */,
+				52EBB56823B6E976008EAC1A /* Models */,
+				52EBB56923B6E991008EAC1A /* Views */,
+				52EBB56A23B6E99A008EAC1A /* Controllers */,
 				52EBB56B23B6EDB4008EAC1A /* Resources */,
 				527179AA235811670090175A /* Info.plist */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
 		};
-		52EBB56823B6E976008EAC1A /* Model */ = {
+		52EBB56823B6E976008EAC1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				527179B2235B5C290090175A /* Card.swift */,
 				523EC14F237D129B00D75EE2 /* Concentration.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		52EBB56923B6E991008EAC1A /* View */ = {
+		52EBB56923B6E991008EAC1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				52EBB56623B6738A008EAC1A /* Confetti.swift */,
 				523C8EBC23A88C5600C2BF54 /* Theme.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		52EBB56A23B6E99A008EAC1A /* Controller */ = {
+		52EBB56A23B6E99A008EAC1A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				527179A0235811650090175A /* ViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		52EBB56B23B6EDB4008EAC1A /* Resources */ = {
@@ -341,7 +341,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benml.Concentration;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Concentration;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,7 +359,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benml.Concentration;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Concentration;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
