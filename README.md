@@ -1,4 +1,4 @@
-# Concentration (Stanford University Course)
+# Concentration Game
 
 This app allows you to play the card game "Concentration", also known as "Memory" and "Match Up", on your iOS Device. The project was initially developed for Stanford's CS193p course (Developing iOS Apps with Swift). I've since added a game over alert, confetti animations, and an info/rules button to increase the game's playability.
 
