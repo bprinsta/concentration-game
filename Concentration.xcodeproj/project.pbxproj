@@ -64,19 +64,51 @@
 		5271799D235811650090175A /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
-				523EC14F237D129B00D75EE2 /* Concentration.swift */,
 				5271799E235811650090175A /* AppDelegate.swift */,
-				527179A0235811650090175A /* ViewController.swift */,
-				52EBB56623B6738A008EAC1A /* Confetti.swift */,
 				523C8EBE23A97B0600C2BF54 /* Constants.swift */,
-				523C8EBC23A88C5600C2BF54 /* Theme.swift */,
-				527179B2235B5C290090175A /* Card.swift */,
-				527179A2235811650090175A /* Main.storyboard */,
-				527179A5235811670090175A /* Assets.xcassets */,
-				527179A7235811670090175A /* LaunchScreen.storyboard */,
+				52EBB56823B6E976008EAC1A /* Model */,
+				52EBB56923B6E991008EAC1A /* View */,
+				52EBB56A23B6E99A008EAC1A /* Controller */,
+				52EBB56B23B6EDB4008EAC1A /* Resources */,
 				527179AA235811670090175A /* Info.plist */,
 			);
 			path = Concentration;
+			sourceTree = "<group>";
+		};
+		52EBB56823B6E976008EAC1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				527179B2235B5C290090175A /* Card.swift */,
+				523EC14F237D129B00D75EE2 /* Concentration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52EBB56923B6E991008EAC1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52EBB56623B6738A008EAC1A /* Confetti.swift */,
+				523C8EBC23A88C5600C2BF54 /* Theme.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52EBB56A23B6E99A008EAC1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				527179A0235811650090175A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52EBB56B23B6EDB4008EAC1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				527179A5235811670090175A /* Assets.xcassets */,
+				527179A2235811650090175A /* Main.storyboard */,
+				527179A7235811670090175A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
