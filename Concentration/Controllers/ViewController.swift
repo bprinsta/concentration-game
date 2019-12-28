@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 			return (cardButtons.count + 1) / 2
 	}
 	
+	private var lastTouchedCardIndex: Int? = nil
+	
 	private var themeBackgroundColor: UIColor?
 	private var themeCardColor: UIColor?
 	private var themeCardFaceColor: UIColor?
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
 	@IBAction private func touchCard(_ sender: UIButton) {
 		if let cardNumber = cardButtons.firstIndex(of: sender)
 		{
+			lastTouchedCardIndex = cardNumber
 			game.chooseCard(at: cardNumber)
 			updateViewFromModel()
 			
@@ -90,6 +93,7 @@ class ViewController: UIViewController {
 	}
 	
 	private func newGame() {
+		lastTouchedCardIndex = nil
 		view.removeLayer(layerName: "confetti")
 		game.newGame()
 		emoji.removeAll()
@@ -131,6 +135,11 @@ class ViewController: UIViewController {
 				button.backgroundColor = card.isMatched ? UIColor.clear : themeCardColor
 				button.isEnabled = card.isMatched ? false : true
 			}
+		}
+		
+		// play flip animation for last touched card
+		if let index: Int = lastTouchedCardIndex {
+			UIView.transition(with: cardButtons[index], duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
 		}
 	}
 		

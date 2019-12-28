@@ -29,7 +29,7 @@ This app allows you to play the card game "Concentration", also known as "Memory
 
 # Future Tasks
 - [ ] add flip card sound effects
-- [ ] add flip card animations
+- [X] add flip card animations
 - [ ] add game background music
 - [ ] change game completion alert to a custom game completion view
 - [ ] add persistence to keep track of a user's high score (NSUserDefaults)
