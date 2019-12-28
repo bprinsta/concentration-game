@@ -26,7 +26,6 @@ This app allows you to play the card game "Concentration", also known as "Memory
 # Built With
 - XCode 11
 - Swift 5.1
-- MVC Architecture
 
 # Future Tasks
 - [ ] add flip card sound effects
