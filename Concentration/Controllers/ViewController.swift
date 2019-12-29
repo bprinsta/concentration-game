@@ -88,7 +88,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	@IBAction private func newGame(_ sender: UIButton) {
+	@IBAction private func touchNewGameButton(_ sender: UIButton) {
 		newGame()
 	}
 	
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
 		updateViewFromModel()
 	}
 	
-	@IBAction private func gameRules(_ sender: UIButton) {
+	@IBAction private func touchGameRulesButton(_ sender: UIButton) {
 		let alertController = UIAlertController(title: "How To Play", message:
 			"Match two of the same cards to score 20 points. If you flip over a card more than once without matching it, you lose 10 points. Put your concentration skills to the test and try to break your high score!", preferredStyle: .alert)
 		alertController.addAction(UIAlertAction(title: "Play", style: .default))
