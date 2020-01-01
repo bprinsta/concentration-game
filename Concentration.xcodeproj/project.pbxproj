@@ -69,7 +69,7 @@
 				52EBB56823B6E976008EAC1A /* Models */,
 				52EBB56923B6E991008EAC1A /* Views */,
 				52EBB56A23B6E99A008EAC1A /* Controllers */,
-				52EBB56B23B6EDB4008EAC1A /* Resources */,
+				527179A5235811670090175A /* Assets.xcassets */,
 				527179AA235811670090175A /* Info.plist */,
 			);
 			path = Concentration;
@@ -87,6 +87,8 @@
 		52EBB56923B6E991008EAC1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				527179A2235811650090175A /* Main.storyboard */,
+				527179A7235811670090175A /* LaunchScreen.storyboard */,
 				52EBB56623B6738A008EAC1A /* Confetti.swift */,
 				523C8EBC23A88C5600C2BF54 /* Theme.swift */,
 			);
@@ -99,16 +101,6 @@
 				527179A0235811650090175A /* ViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		52EBB56B23B6EDB4008EAC1A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				527179A5235811670090175A /* Assets.xcassets */,
-				527179A2235811650090175A /* Main.storyboard */,
-				527179A7235811670090175A /* LaunchScreen.storyboard */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
