@@ -15,7 +15,7 @@ struct ThemeColors {
 	static let teal = UIColor(hex: 0x98e7df)
 	
 	// Brown Theme Colors
-	static let brown = UIColor(hex: 0xbe9b7b)
+	static let brown = UIColor(hex: 0x856c56)
 	static let darkCream = UIColor(hex: 0xffdeb3)
 	static let cream = UIColor(hex: 0xfff4e6)
 	
