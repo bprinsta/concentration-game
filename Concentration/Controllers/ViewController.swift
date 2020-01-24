@@ -37,7 +37,9 @@ class ViewController: UIViewController {
 	@IBOutlet private(set) var cardButtons: [UIButton]!
 	@IBOutlet private weak var newGameButton: UIButton!
 	@IBOutlet private weak var gameTitleLabel: UILabel!
-		
+	
+	@IBOutlet weak var infoButton: UIButton!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setTheme()
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
 		newGameButton.backgroundColor = themeCardFaceColor
 		newGameButton.layer.cornerRadius = 8.0
 		gameTitleLabel.textColor = themeCardColor
+		infoButton.tintColor = themeCardColor
 		
 		// Round card's corners
 		for index in cardButtons.indices {
