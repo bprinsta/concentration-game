@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct ScoringValues {
+	static let correctMatch = 20
+	static let wrongMatch = 10
+}
+
 struct ThemeColors {
 	// Main Theme Colors
 	static let white = UIColor(hex: 0xFDFFFC)

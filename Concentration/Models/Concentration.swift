@@ -38,9 +38,9 @@ struct Concentration {
 				if cards[matchIndex] == cards[index] {
 					cards[matchIndex].isMatched = true
 					cards[index].isMatched = true
-					score += 20
+					score += ScoringValues.correctMatch
 				} else if cards[index].flipCount > 0 || cards[matchIndex].flipCount > 0 {
-					score -= 10
+					score -= ScoringValues.wrongMatch
 				}
 				cards[index].isFaceUp = true
 				cards[index].flipCount += 1

@@ -103,7 +103,7 @@ class ViewController: UIViewController {
 	
 	@IBAction private func touchGameRulesButton(_ sender: UIButton) {
 		let alertController = UIAlertController(title: "How To Play", message:
-			"Match two of the same cards to score 20 points. If you flip over a card more than once without matching it, you lose 10 points. Put your concentration skills to the test and try to break your high score!", preferredStyle: .alert)
+			"Match two of the same cards to score \(ScoringValues.correctMatch) points. If you flip over a card more than once without matching it, you lose \(ScoringValues.wrongMatch) points. Put your concentration skills to the test and try to break your high score!", preferredStyle: .alert)
 		alertController.addAction(UIAlertAction(title: "Play", style: .default))
 		
 		self.present(alertController, animated: true, completion: nil)
