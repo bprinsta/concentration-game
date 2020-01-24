@@ -8,6 +8,22 @@
 
 import UIKit
 
+struct Confetti {
+	static let box = UIImage(named: "Box")!
+    static let triangle = UIImage(named: "Triangle")!
+    static let circle = UIImage(named: "Circle")!
+    static let spiral = UIImage(named: "Spiral")!
+	
+	static let red = UIColor(red: 1.0, green: 0.0, blue: 77.0/255.0, alpha: 1.0)
+    static let green = UIColor(red: 35.0/255.0 , green: 233/255, blue: 173/255.0, alpha: 1.0)
+	static let blue = UIColor.blue
+    static let yellow = UIColor(red: 1, green: 209/255, blue: 77.0/255.0, alpha: 1.0)
+	
+	static let velocities:[Int] = [100, 90, 150, 200]
+	static let images:[UIImage] = [box, triangle, circle, spiral]
+	static let colors: [UIColor] = [red, green, blue, yellow]
+}
+
 func createParticles(view: UIView) {
 	let particleEmitter = CAEmitterLayer()
 	
@@ -47,5 +63,13 @@ func generateEmitterCells() -> [CAEmitterCell] {
 	}
 	
 	return cells
+}
+
+extension UIView {
+    func removeLayer(layerName: String) {
+            for item in self.layer.sublayers ?? [] where item.name == layerName {
+                    item.removeFromSuperlayer()
+            }
+        }
 }
 
