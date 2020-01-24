@@ -9,8 +9,8 @@
 import UIKit
 
 struct ScoringValues {
-	static let correctMatch = 20
-	static let wrongMatch = 10
+	static let correctMatch = 40
+	static let wrongMatch = 20
 }
 
 struct ThemeColors {
