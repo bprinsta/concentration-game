@@ -33,4 +33,5 @@ This app allows you to play the card game "Concentration", also known as "Memory
 - [ ] add game background music
 - [ ] change game completion alert to a custom game completion view
 - [ ] add persistence to keep track of a user's high score (NSUserDefaults)
+- [X] add time based gameplay
 

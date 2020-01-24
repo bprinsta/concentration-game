@@ -15,9 +15,11 @@ struct Concentration {
 	private(set) var flipCount: Int
 	private(set) var gameOver: Bool
 	
+	var timeStart: Date?
+	
 	private var indexOfOneAndOnlyFaceUpCard: Int? {
 		get {
-			return cards.indices.filter {cards[$0].isFaceUp }.oneAndOnly
+			return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
 		}
 		set(newValue) {
 			for index in cards.indices {
@@ -39,8 +41,27 @@ struct Concentration {
 					cards[matchIndex].isMatched = true
 					cards[index].isMatched = true
 					score += ScoringValues.correctMatch
+					
+					if let time = timeStart {
+						let timeElapsed = Date().timeIntervalSince(time)
+						if timeElapsed < 0.75 {
+							score += ScoringValues.timeBonusHigh
+						} else if timeElapsed < 1 {
+							score += ScoringValues.timeBonusLow
+						}
+					}
+					
 				} else if cards[index].flipCount > 0 || cards[matchIndex].flipCount > 0 {
 					score -= ScoringValues.wrongMatch
+					
+					if let time = timeStart {
+						let timeElapsed = Date().timeIntervalSince(time)
+						if timeElapsed > 1 {
+							score -= ScoringValues.timeBonusLow
+						} else if timeElapsed > 1.5 {
+							score += ScoringValues.timeBonusHigh
+						}
+					}
 				}
 				cards[index].isFaceUp = true
 				cards[index].flipCount += 1
@@ -48,6 +69,10 @@ struct Concentration {
 			} else {
 				indexOfOneAndOnlyFaceUpCard = index
 			}
+		}
+		
+		if (cards.indices.filter { cards[$0].isFaceUp }.count) == 1 {
+			timeStart = Date()
 		}
 		
 		gameOver = isGameOver()
