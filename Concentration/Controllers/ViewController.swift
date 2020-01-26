@@ -114,7 +114,7 @@ class ViewController: UIViewController {
 	
 	private func endGame() {
 		let alertController = UIAlertController(title: "Congratulations!", message:
-			"You finished the game with a score of \(game.score)!", preferredStyle: .alert)
+			"You finished the game with a score of \(game.score)! \n \n Your current high score is \(game.highScore)", preferredStyle: .alert)
 		alertController.addAction(UIAlertAction(title: "Play New Game", style: .default, handler: { _ in
 			self.newGame()
 		}))

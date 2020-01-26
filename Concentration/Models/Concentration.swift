@@ -14,8 +14,18 @@ struct Concentration {
 	private(set) var score: Int
 	private(set) var flipCount: Int
 	private(set) var gameOver: Bool
+	private(set) var timeStart: Date?
 	
-	var timeStart: Date?
+	private(set) var highScore: Int {
+		get {
+			return UserDefaults.standard.integer(forKey: "highscore")
+		}
+		set {
+			if newValue > UserDefaults.standard.integer(forKey: "highscore") {
+				UserDefaults.standard.set(newValue, forKey: "highscore")
+			}
+		}
+	}
 	
 	private var indexOfOneAndOnlyFaceUpCard: Int? {
 		get {
@@ -76,6 +86,10 @@ struct Concentration {
 		}
 		
 		gameOver = isGameOver()
+		
+		if gameOver {
+			highScore = score;
+		}
 	}
 	
 	mutating func newGame() {

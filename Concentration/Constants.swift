@@ -9,7 +9,7 @@
 import UIKit
 
 struct ScoringValues {
-	static let correctMatch = 60
+	static let correctMatch = 80
 	static let wrongMatch = 40
 	static let timeBonusHigh = 30
 	static let timeBonusLow = 20
@@ -44,7 +44,8 @@ struct ThemeEmojis {
 	static let space = ["🌝", "🌗", "🌎", "🌚", "🌙", "💫", "🌍", "🌓", "⭐️", "🌛", "☄️", "✨"]
 	static let sports = ["⚽️", "🏀", "🏈", "🎳", "🏒", "🏐", "🥊", "🎾", "🎱", "🏓", "🏸", "⛳️"]
 	static let nature = ["🌵", "🌲", "🌳", "🌴", "🎋", "💐", "🍀", "🍁", "🍄", "🥀", "🌸", "🌻"]
-	static let random = ["👹", "💩", "👅", "👀", "💄", "💊", "🧠", "👑", "🎩", "🎁", "💡", "⚱️"]	
+	static let random = ["👹", "💩", "👅", "👀", "💄", "💊", "🧠", "👑", "🎩", "🎁", "💡", "⚱️"]
+	static let transportation = ["🚗", "✈️", "🚁", " 🛳", "🛵", "🚀", "🚑", "🛴", "🚅", "🚠", "🛶"]
 }
 
 extension UIColor {
