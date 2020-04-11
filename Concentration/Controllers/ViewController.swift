@@ -38,8 +38,9 @@ class ViewController: UIViewController {
 	@IBOutlet private(set) var cardButtons: [UIButton]!
 	@IBOutlet private weak var newGameButton: UIButton!
 	@IBOutlet private weak var gameTitleLabel: UILabel!
-	
+
 	@IBOutlet weak var infoButton: UIButton!
+	@IBOutlet weak var soundToggleButton: UIButton!
 	
 	let positiveSound = URL(fileURLWithPath: Bundle.main.path(forResource: "positive_sound", ofType: "wav")!)
 	let errorSound = URL(fileURLWithPath: Bundle.main.path(forResource: "error_sound", ofType: "mp3")!)
@@ -50,6 +51,8 @@ class ViewController: UIViewController {
 		
 		return audioPlayer
 	}()
+	
+	var soundOn = true
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -77,8 +80,8 @@ class ViewController: UIViewController {
 		newGameButton.layer.cornerRadius = 8.0
 		gameTitleLabel.textColor = themeCardColor
 		infoButton.tintColor = themeCardColor
+		soundToggleButton.tintColor = themeCardColor
 		
-		// Round card's corners
 		for index in cardButtons.indices {
 			cardButtons[index].layer.cornerRadius = 8.0
 		}
@@ -93,11 +96,11 @@ class ViewController: UIViewController {
 			
 			if game.correctMatch == Match.yes {
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
-					self.playPostiveSound()
+					self.playSound(sound: self.positiveSound)
 				})
 			} else if game.correctMatch == Match.no {
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
-					self.playNegativeSound()
+					self.playSound(sound: self.errorSound)
 				})
 			}
 			
@@ -132,6 +135,16 @@ class ViewController: UIViewController {
 		alertController.addAction(UIAlertAction(title: "Play", style: .default))
 		
 		self.present(alertController, animated: true, completion: nil)
+	}
+	
+	@IBAction private func touchSoundToggleButton(_ sender: UIButton) {
+		if soundOn {
+			soundToggleButton.tintColor = UIColor.gray
+			soundOn = false
+		} else {
+			soundToggleButton.tintColor = themeCardColor
+			soundOn = true
+		}
 	}
 	
 	private func endGame() {
@@ -175,21 +188,14 @@ class ViewController: UIViewController {
 		return emoji[card] ?? "?"
 	}
 	
-	private func playPostiveSound() {
-		do {
-			audioPlayer = try AVAudioPlayer(contentsOf: positiveSound)
-			audioPlayer.play()
-		} catch {
-			// couldn't load file :(
-		}
-	}
-	
-	private func playNegativeSound() {
-		do {
-			audioPlayer = try AVAudioPlayer(contentsOf: errorSound)
-			audioPlayer.play()
-		} catch {
-			// couldn't load file :(
+	private func playSound(sound: URL) {
+		if soundOn {
+			do {
+				audioPlayer = try AVAudioPlayer(contentsOf: sound)
+				audioPlayer.play()
+			} catch {
+				// couldn't load file :(
+			}
 		}
 	}
 }

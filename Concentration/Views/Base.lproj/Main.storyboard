@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -274,6 +274,14 @@
                                     <action selector="touchGameRulesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oT-mp-i2v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xou-gW-eth">
+                                <rect key="frame" x="20" y="59" width="40" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="speaker.3.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="touchSoundToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MIq-hP-jJR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -282,13 +290,16 @@
                             <constraint firstItem="hFF-m5-tfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VU4-zU-DRL" secondAttribute="bottom" constant="12" id="7iq-lC-fr1"/>
                             <constraint firstItem="sqa-37-drC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8Kr-ZZ-gfB"/>
                             <constraint firstItem="4ej-mi-h67" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8Nd-4s-EAr"/>
+                            <constraint firstItem="4ej-mi-h67" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xou-gW-eth" secondAttribute="trailing" constant="86" id="8qF-WR-Cfh"/>
                             <constraint firstItem="4ej-mi-h67" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="8wA-4R-f6E"/>
                             <constraint firstItem="hFF-m5-tfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sqa-37-drC" secondAttribute="bottom" constant="12" id="RYE-Zp-gkL"/>
                             <constraint firstItem="LzM-B8-lbv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="SA0-og-fNz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LzM-B8-lbv" secondAttribute="trailing" constant="20" id="TzS-3w-Fln"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hFF-m5-tfY" secondAttribute="trailing" constant="16" id="ZWb-Y7-vqf"/>
+                            <constraint firstItem="xou-gW-eth" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="ZmU-Xc-b5H"/>
                             <constraint firstItem="VU4-zU-DRL" firstAttribute="top" secondItem="4ej-mi-h67" secondAttribute="bottom" constant="12" id="a9o-M7-P16"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dyB-Z0-WiV" secondAttribute="bottom" constant="64" id="h32-C5-Hsl"/>
+                            <constraint firstItem="xou-gW-eth" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jNx-sP-D8x"/>
                             <constraint firstItem="LzM-B8-lbv" firstAttribute="leading" relation="lessThanOrEqual" secondItem="4ej-mi-h67" secondAttribute="trailing" constant="86" id="rt5-bl-4dN"/>
                             <constraint firstItem="hFF-m5-tfY" firstAttribute="top" secondItem="4ej-mi-h67" secondAttribute="bottom" constant="72" id="sT7-lm-vJ3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hFF-m5-tfY" secondAttribute="bottom" priority="750" id="sU6-gx-nXF"/>
@@ -305,6 +316,7 @@
                         <outlet property="infoButton" destination="LzM-B8-lbv" id="cBE-XL-vMj"/>
                         <outlet property="newGameButton" destination="dyB-Z0-WiV" id="fjx-be-GW3"/>
                         <outlet property="scoreLabel" destination="sqa-37-drC" id="RrC-br-HB0"/>
+                        <outlet property="soundToggleButton" destination="xou-gW-eth" id="Yhd-kB-Hbl"/>
                         <outletCollection property="cardButtons" destination="Xyt-FA-QHG" collectionClass="NSMutableArray" id="5Gx-dp-ivw"/>
                         <outletCollection property="cardButtons" destination="ywf-5K-Q0e" collectionClass="NSMutableArray" id="0Bb-y5-xiu"/>
                         <outletCollection property="cardButtons" destination="EVJ-3f-VPY" collectionClass="NSMutableArray" id="Axj-nR-fj5"/>
@@ -336,4 +348,7 @@
             <point key="canvasLocation" x="134.78260869565219" y="130.58035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="speaker.3.fill" catalog="system" width="128" height="90"/>
+    </resources>
 </document>
