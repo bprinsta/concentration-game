@@ -8,13 +8,20 @@
 
 import Foundation
 
+enum Match: Int {
+	case no = -1
+	case tbd = 0
+	case yes = 1
+}
+
 struct Concentration {
-	
 	private(set) var cards = [Card]()
 	private(set) var score: Int
 	private(set) var flipCount: Int
 	private(set) var gameOver: Bool
 	private(set) var timeStart: Date?
+	
+	private(set) var correctMatch = Match.tbd
 	
 	private(set) var highScore: Int {
 		get {
@@ -40,9 +47,9 @@ struct Concentration {
 	
 	mutating func chooseCard(at index: Int) {
 		assert(cards.indices.contains(index), "Concentration.chooseCard(at index: \(index)): chosen index not in the cards")
-		
 		if (!cards[index].isFaceUp) {
 			flipCount += 1
+			correctMatch = .tbd
 		}
 		
 		if !cards[index].isMatched {
@@ -51,6 +58,7 @@ struct Concentration {
 					cards[matchIndex].isMatched = true
 					cards[index].isMatched = true
 					score += ScoringValues.correctMatch
+					correctMatch = Match.yes
 					
 					if let time = timeStart {
 						let timeElapsed = Date().timeIntervalSince(time)
@@ -63,6 +71,7 @@ struct Concentration {
 					
 				} else if cards[index].flipCount > 0 || cards[matchIndex].flipCount > 0 {
 					score -= ScoringValues.wrongMatch
+					correctMatch = Match.no
 					
 					if let time = timeStart {
 						let timeElapsed = Date().timeIntervalSince(time)

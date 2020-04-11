@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 	
@@ -39,6 +40,16 @@ class ViewController: UIViewController {
 	@IBOutlet private weak var gameTitleLabel: UILabel!
 	
 	@IBOutlet weak var infoButton: UIButton!
+	
+	let positiveSound = URL(fileURLWithPath: Bundle.main.path(forResource: "positive_sound", ofType: "wav")!)
+	let errorSound = URL(fileURLWithPath: Bundle.main.path(forResource: "error_sound", ofType: "mp3")!)
+	
+	var audioPlayer: AVAudioPlayer = {
+		var audioPlayer = AVAudioPlayer()
+		audioPlayer.volume = 0.50
+		
+		return audioPlayer
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -79,6 +90,17 @@ class ViewController: UIViewController {
 		{
 			lastTouchedCardIndex = cardNumber
 			game.chooseCard(at: cardNumber)
+			
+			if game.correctMatch == Match.yes {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+					self.playPostiveSound()
+				})
+			} else if game.correctMatch == Match.no {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+					self.playNegativeSound()
+				})
+			}
+			
 			updateViewFromModel()
 			
 		} else {
@@ -151,6 +173,24 @@ class ViewController: UIViewController {
 			emoji[card] = themeCardTitles!.remove(at: themeCardTitles!.count.arc4random)
 		}
 		return emoji[card] ?? "?"
+	}
+	
+	private func playPostiveSound() {
+		do {
+			audioPlayer = try AVAudioPlayer(contentsOf: positiveSound)
+			audioPlayer.play()
+		} catch {
+			// couldn't load file :(
+		}
+	}
+	
+	private func playNegativeSound() {
+		do {
+			audioPlayer = try AVAudioPlayer(contentsOf: errorSound)
+			audioPlayer.play()
+		} catch {
+			// couldn't load file :(
+		}
 	}
 }
 
