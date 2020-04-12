@@ -45,6 +45,8 @@ class ViewController: UIViewController {
 	
 	var bannerView: GADBannerView!
 	
+	let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
+	
 	let positiveSound = URL(fileURLWithPath: Bundle.main.path(forResource: "positive_sound", ofType: "wav")!)
 	let errorSound = URL(fileURLWithPath: Bundle.main.path(forResource: "error_sound", ofType: "mp3")!)
 	
@@ -126,6 +128,8 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction private func touchNewGameButton(_ sender: UIButton) {
+		impactFeedbackgenerator.prepare()
+		impactFeedbackgenerator.impactOccurred()
 		newGame()
 	}
 	
@@ -147,6 +151,7 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction private func touchSoundToggleButton(_ sender: UIButton) {
+		impactFeedbackgenerator.impactOccurred()
 		if soundOn {
 			soundToggleButton.tintColor = UIColor.gray
 			soundOn = false
