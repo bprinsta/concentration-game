@@ -49,19 +49,31 @@ class ViewController: UIViewController {
 	
 	let positiveSound = URL(fileURLWithPath: Bundle.main.path(forResource: "positive_sound", ofType: "wav")!)
 	let errorSound = URL(fileURLWithPath: Bundle.main.path(forResource: "error_sound", ofType: "mp3")!)
+	let backgroundMusic = URL(fileURLWithPath: Bundle.main.path(forResource: "Mellow-Puzzler", ofType: "mp3")!)
 	
-	var audioPlayer: AVAudioPlayer = {
+	var soundEffectsPlayer: AVAudioPlayer = {
 		var audioPlayer = AVAudioPlayer()
-		audioPlayer.volume = 0.50
+		audioPlayer.setVolume(0.8, fadeDuration: 0)
 		
 		return audioPlayer
 	}()
 	
-	var soundOn = true
+	var musicPlayer = AVAudioPlayer()
+	
+	var soundOn = true {
+		didSet {
+			if !soundOn {
+				musicPlayer.setVolume(0.0, fadeDuration: 0)
+			} else {
+				musicPlayer.setVolume(0.3, fadeDuration: 0)
+			}
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setTheme()
+		startAudio()
 		updateViewFromModel()
 		endGame()
 	}
@@ -92,10 +104,21 @@ class ViewController: UIViewController {
 		}
 		
 		bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-		bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+		bannerView.adUnitID = Constants.adMobID
 		bannerView.rootViewController = self
 		bannerView.load(GADRequest())
 		addBannerViewToView(bannerView)
+	}
+	
+	private func startAudio() {
+		do {
+			musicPlayer = try AVAudioPlayer(contentsOf: backgroundMusic)
+			musicPlayer.play()
+		} catch {
+			// couldn't load file :(
+		}
+		musicPlayer.numberOfLoops = -1
+		musicPlayer.setVolume(0.3, fadeDuration: 0)
 	}
 	
 	// MARK: Handle Card Touch Behavior
@@ -205,8 +228,8 @@ class ViewController: UIViewController {
 	private func playSound(sound: URL) {
 		if soundOn {
 			do {
-				audioPlayer = try AVAudioPlayer(contentsOf: sound)
-				audioPlayer.play()
+				soundEffectsPlayer = try AVAudioPlayer(contentsOf: sound)
+				soundEffectsPlayer.play()
 			} catch {
 				// couldn't load file :(
 			}
@@ -215,7 +238,7 @@ class ViewController: UIViewController {
 	
 	private func addBannerViewToView(_ bannerView: GADBannerView) {
 	   view.addSubview(bannerView)
-		bannerView.anchor(top: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
+		bannerView.anchor(top: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 16))
 	  }
 }
 

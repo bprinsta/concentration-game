@@ -1,0 +1,8 @@
+app_identifier("com.benml.Concentration") # The bundle identifier of your app
+apple_id("ben.musoke.lubega@gmail.com") # Your Apple email address
+
+itc_team_id("121354845") # App Store Connect Team ID
+team_id("3P23SN4979") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

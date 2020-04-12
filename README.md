@@ -1,6 +1,8 @@
 # Concentration Game
 
-This app allows you to play the card game "Concentration", also known as "Memory" and "Match Up", on your iOS Device. The project was initially developed for Stanford's CS193p course (Developing iOS Apps with Swift). I've since added a game over alert, confetti animations, and an info/rules button to increase the game's playability.
+This app allows you to play the card game "Concentration", also known as "Memory" and "Match Up", on your iOS Device. The goal of the game is to match up every pair of cards with as few flips as possible!
+
+. I've since added a game over alert, confetti animations, and an info/rules button to increase the game's playability.
 
 # Game Screenshots
 <img src="https://user-images.githubusercontent.com/28976325/71538580-8dda0780-28fb-11ea-8d13-f3c7993991dd.jpeg"
@@ -28,10 +30,10 @@ This app allows you to play the card game "Concentration", also known as "Memory
 - Swift 5.1
 
 # Future Tasks
-- [ ] add flip card sound effects
+- [X] add flip card sound effects
 - [X] add flip card animations
-- [ ] add game background music
+- [X] add game background music
 - [ ] change game completion alert to a custom game completion view
-- [ ] add persistence to keep track of a user's high score (NSUserDefaults)
+- [X] add persistence to keep track of a user's high score (NSUserDefaults)
 - [X] add time based gameplay
 

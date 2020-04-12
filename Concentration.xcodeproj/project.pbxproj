@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		523BE45524427011007EC011 /* error_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 523BE45324427011007EC011 /* error_sound.mp3 */; };
-		523BE45624427011007EC011 /* coin_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 523BE45424427011007EC011 /* coin_sound.mp3 */; };
 		523BE45C24427768007EC011 /* positive_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 523BE45B24427768007EC011 /* positive_sound.wav */; };
 		523BE45E2442A5A9007EC011 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE45D2442A5A9007EC011 /* UIView+Anchor.swift */; };
+		523BE46624430072007EC011 /* ConcentrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE46524430072007EC011 /* ConcentrationUITests.swift */; };
+		523BE46E244300B6007EC011 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523BE46D244300B6007EC011 /* SnapshotHelper.swift */; };
+		523BE47224439F43007EC011 /* Mellow-Puzzler.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 523BE47124439F43007EC011 /* Mellow-Puzzler.mp3 */; };
 		523C8EBD23A88C5600C2BF54 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C8EBC23A88C5600C2BF54 /* Theme.swift */; };
 		523C8EBF23A97B0600C2BF54 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C8EBE23A97B0600C2BF54 /* Constants.swift */; };
 		523EC150237D129B00D75EE2 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EC14F237D129B00D75EE2 /* Concentration.swift */; };
@@ -24,11 +26,25 @@
 		C1D5C06098BC099C41645363 /* Pods_Concentration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09E78BEE719CD55B119C536 /* Pods_Concentration.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		523BE46824430072007EC011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52717993235811650090175A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5271799A235811650090175A;
+			remoteInfo = Concentration;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		523BE45324427011007EC011 /* error_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error_sound.mp3; sourceTree = "<group>"; };
-		523BE45424427011007EC011 /* coin_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin_sound.mp3; sourceTree = "<group>"; };
 		523BE45B24427768007EC011 /* positive_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = positive_sound.wav; sourceTree = "<group>"; };
 		523BE45D2442A5A9007EC011 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		523BE46324430072007EC011 /* ConcentrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcentrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		523BE46524430072007EC011 /* ConcentrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationUITests.swift; sourceTree = "<group>"; };
+		523BE46724430072007EC011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523BE46D244300B6007EC011 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		523BE47124439F43007EC011 /* Mellow-Puzzler.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mellow-Puzzler.mp3"; sourceTree = "<group>"; };
 		523C8EBC23A88C5600C2BF54 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		523C8EBE23A97B0600C2BF54 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		523EC14F237D129B00D75EE2 /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
@@ -47,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		523BE46024430072007EC011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52717998235811650090175A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,17 +92,28 @@
 		523BE45224427011007EC011 /* MusicAssets */ = {
 			isa = PBXGroup;
 			children = (
+				523BE47124439F43007EC011 /* Mellow-Puzzler.mp3 */,
 				523BE45B24427768007EC011 /* positive_sound.wav */,
 				523BE45324427011007EC011 /* error_sound.mp3 */,
-				523BE45424427011007EC011 /* coin_sound.mp3 */,
 			);
 			path = MusicAssets;
+			sourceTree = "<group>";
+		};
+		523BE46424430072007EC011 /* ConcentrationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				523BE46D244300B6007EC011 /* SnapshotHelper.swift */,
+				523BE46524430072007EC011 /* ConcentrationUITests.swift */,
+				523BE46724430072007EC011 /* Info.plist */,
+			);
+			path = ConcentrationUITests;
 			sourceTree = "<group>";
 		};
 		52717992235811650090175A = {
 			isa = PBXGroup;
 			children = (
 				5271799D235811650090175A /* Concentration */,
+				523BE46424430072007EC011 /* ConcentrationUITests */,
 				5271799C235811650090175A /* Products */,
 				C9E318D71FDCE5D296CFA6D3 /* Pods */,
 				4EAD4E5442B21E72A1444760 /* Frameworks */,
@@ -90,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				5271799B235811650090175A /* Concentration.app */,
+				523BE46324430072007EC011 /* ConcentrationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +185,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		523BE46224430072007EC011 /* ConcentrationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523BE46A24430072007EC011 /* Build configuration list for PBXNativeTarget "ConcentrationUITests" */;
+			buildPhases = (
+				523BE45F24430072007EC011 /* Sources */,
+				523BE46024430072007EC011 /* Frameworks */,
+				523BE46124430072007EC011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				523BE46924430072007EC011 /* PBXTargetDependency */,
+			);
+			name = ConcentrationUITests;
+			productName = ConcentrationUITests;
+			productReference = 523BE46324430072007EC011 /* ConcentrationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5271799A235811650090175A /* Concentration */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 527179AD235811670090175A /* Build configuration list for PBXNativeTarget "Concentration" */;
@@ -175,10 +228,14 @@
 		52717993235811650090175A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Ben Musoke-Lubega";
 				TargetAttributes = {
+					523BE46224430072007EC011 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5271799A235811650090175A;
+					};
 					5271799A235811650090175A = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1130;
@@ -199,17 +256,25 @@
 			projectRoot = "";
 			targets = (
 				5271799A235811650090175A /* Concentration */,
+				523BE46224430072007EC011 /* ConcentrationUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		523BE46124430072007EC011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52717999235811650090175A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523BE45624427011007EC011 /* coin_sound.mp3 in Resources */,
 				527179A9235811670090175A /* LaunchScreen.storyboard in Resources */,
+				523BE47224439F43007EC011 /* Mellow-Puzzler.mp3 in Resources */,
 				527179A6235811670090175A /* Assets.xcassets in Resources */,
 				527179A4235811650090175A /* Main.storyboard in Resources */,
 				523BE45524427011007EC011 /* error_sound.mp3 in Resources */,
@@ -262,6 +327,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		523BE45F24430072007EC011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523BE46624430072007EC011 /* ConcentrationUITests.swift in Sources */,
+				523BE46E244300B6007EC011 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52717997235811650090175A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +352,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		523BE46924430072007EC011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5271799A235811650090175A /* Concentration */;
+			targetProxy = 523BE46824430072007EC011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		527179A2235811650090175A /* Main.storyboard */ = {
@@ -299,6 +381,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		523BE46B24430072007EC011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P23SN4979;
+				INFOPLIST_FILE = ConcentrationUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benml.ConcentrationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Concentration;
+			};
+			name = Debug;
+		};
+		523BE46C24430072007EC011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P23SN4979;
+				INFOPLIST_FILE = ConcentrationUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benml.ConcentrationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Concentration;
+			};
+			name = Release;
+		};
 		527179AB235811670090175A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,6 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benml.Concentration;
 				PRODUCT_NAME = Concentration;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -447,6 +573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benml.Concentration;
 				PRODUCT_NAME = Concentration;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -458,6 +585,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		523BE46A24430072007EC011 /* Build configuration list for PBXNativeTarget "ConcentrationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523BE46B24430072007EC011 /* Debug */,
+				523BE46C24430072007EC011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		52717996235811650090175A /* Build configuration list for PBXProject "Concentration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
