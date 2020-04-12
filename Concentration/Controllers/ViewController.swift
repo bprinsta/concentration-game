@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class ViewController: UIViewController {
 	
@@ -41,6 +42,8 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var infoButton: UIButton!
 	@IBOutlet weak var soundToggleButton: UIButton!
+	
+	var bannerView: GADBannerView!
 	
 	let positiveSound = URL(fileURLWithPath: Bundle.main.path(forResource: "positive_sound", ofType: "wav")!)
 	let errorSound = URL(fileURLWithPath: Bundle.main.path(forResource: "error_sound", ofType: "mp3")!)
@@ -85,6 +88,12 @@ class ViewController: UIViewController {
 		for index in cardButtons.indices {
 			cardButtons[index].layer.cornerRadius = 8.0
 		}
+		
+		bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+		bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+		bannerView.rootViewController = self
+		bannerView.load(GADRequest())
+		addBannerViewToView(bannerView)
 	}
 	
 	// MARK: Handle Card Touch Behavior
@@ -198,6 +207,11 @@ class ViewController: UIViewController {
 			}
 		}
 	}
+	
+	private func addBannerViewToView(_ bannerView: GADBannerView) {
+	   view.addSubview(bannerView)
+		bannerView.anchor(top: nil, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
+	  }
 }
 
 // MARK: Extensions
