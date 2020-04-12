@@ -104,7 +104,7 @@ class ViewController: UIViewController {
 		}
 		
 		bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-		bannerView.adUnitID = Constants.adMobID
+		bannerView.adUnitID = Constants.adUnitID
 		bannerView.rootViewController = self
 		bannerView.load(GADRequest())
 		addBannerViewToView(bannerView)

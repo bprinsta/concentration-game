@@ -10,9 +10,8 @@ import UIKit
 
 struct Constants {
 	static let testAdMobID = "ca-app-pub-3940256099942544/2934735716"
-	static let adMobID = "ca-app-pub-8648415116321033~8613651028"
+	static let adUnitID = "ca-app-pub-8648415116321033/5273171811"
 }
-
 
 struct ScoringValues {
 	static let correctMatch = 80
