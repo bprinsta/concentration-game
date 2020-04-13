@@ -1,6 +1,11 @@
 # Concentration Game
 
-This app allows you to play the card game "Concentration", also known as "Memory" and "Match Up", on your iOS Device. The goal of the game is to match up every pair of cards with as few flips as possible!
+This app allows you to play the card game "Concentration", also known as "Memory" and "Match Up", on your iOS Device. The goal of the game is to match up every pair of cards with as few flips as possible! Check it out live on the app store!
+<p align="left">
+    <a href="https://apps.apple.com/app/id1506850236" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg">
+  </a>
+</p>
 
 # Game Screenshots
 <img src="https://user-images.githubusercontent.com/28976325/71538580-8dda0780-28fb-11ea-8d13-f3c7993991dd.jpeg"
