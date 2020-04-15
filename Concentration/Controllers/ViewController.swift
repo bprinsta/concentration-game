@@ -97,20 +97,24 @@ class ViewController: UIViewController {
 		newGameButton.layer.cornerRadius = 8.0
 		gameTitleLabel.textColor = themeCardColor
 		infoButton.tintColor = themeCardColor
-		soundToggleButton.tintColor = themeCardColor
 		
 		for index in cardButtons.indices {
 			cardButtons[index].layer.cornerRadius = 8.0
 		}
 		
 		bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-		bannerView.adUnitID = Constants.adUnitID
+		bannerView.adUnitID = Constants.testAdMobID
 		bannerView.rootViewController = self
 		bannerView.load(GADRequest())
 		addBannerViewToView(bannerView)
 	}
 	
 	private func startAudio() {
+		if soundOn {
+			soundToggleButton.tintColor = themeCardColor
+		} else {
+			soundToggleButton.tintColor = UIColor.gray
+		}
 		do {
 			musicPlayer = try AVAudioPlayer(contentsOf: backgroundMusic)
 			musicPlayer.play()
