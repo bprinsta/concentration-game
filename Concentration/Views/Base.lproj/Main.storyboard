@@ -252,6 +252,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyB-Z0-WiV">
                                 <rect key="frame" x="133.66666666666666" y="739" width="146.99999999999997" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Cse-Gy-i67"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <state key="normal" title="   New Game   "/>
                                 <connections>
